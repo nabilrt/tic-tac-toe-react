@@ -6,9 +6,10 @@ import Winner from "./components/Winner";
 import Draw from "./components/Draw";
 import PlayingMode from "./components/PlayingMode";
 import ResetGame from "./components/ResetGame";
+import AddNames from "./components/AddNames";
 
 function App() {
-  const { playingMode, winner, draw } = useTicTacToe();
+  const { winner, draw, state } = useTicTacToe();
 
   return (
     <div className="flex  h-screen ">
@@ -17,9 +18,9 @@ function App() {
           <span className=" text-2xl">Welcom to Tic-Tac-Toe by</span>
           <img src="/react.svg" className="animate-spin inline"></img>
         </div>
-        {!playingMode && <PlayingMode />}
-
-        {playingMode && (
+        {!state.firstStage && <PlayikngMode />}
+        {state.firstStage && !state.secondStage && <AddNames />}
+        {state.firstStage && state.secondStage && (
           <Fragment>
             <GameBoard />
             {winner ? (

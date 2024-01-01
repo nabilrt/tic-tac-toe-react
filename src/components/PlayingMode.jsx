@@ -1,7 +1,8 @@
 import { useTicTacToe } from "../context/game-context";
+import Button from "../module/Button";
 
 const PlayingMode = () => {
-  const { playingMode, setPlayingMode } = useTicTacToe();
+  const { playingMode, setPlayingMode, FirstStage } = useTicTacToe();
 
   return (
     <div className="flex flex-col space-y-6">
@@ -17,6 +18,9 @@ const PlayingMode = () => {
         <option value="single">Single Player</option>
         <option value="multi">Multi Player</option>
       </select>
+      <Button type="button" onClick={() => FirstStage(playingMode)} variant="secondary">
+        Select
+      </Button>
     </div>
   );
 };

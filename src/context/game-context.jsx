@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
+import { INITIAL_STATE, stageReducer } from "../reducer/stage-reducer";
 
 export const GameProvider = createContext();
 
@@ -9,8 +10,10 @@ export const GameContextProvider = ({ children }) => {
     ["", "", ""],
   ]);
 
-  const [player1Name, setPlayer1Name] = useState("Player 1");
-  const [player2Name, setPlayer2Name] = useState("Player 2");
+  const [state, dispatch] = useReducer(stageReducer, INITIAL_STATE);
+
+  const [player1Name, setPlayer1Name] = useState(null);
+  const [player2Name, setPlayer2Name] = useState(null);
   const [players, setPlayers] = useState({
     player: {
       name: player1Name,
@@ -149,6 +152,29 @@ export const GameContextProvider = ({ children }) => {
     setCurrentPlayer(players.player.symbol);
   };
 
+  const FirstStage = (e) => {
+    setPlayingMode(e);
+    dispatch({ type: "FIRST_STAGE_COMPLETED" });
+  };
+
+  const SecondStage = (player1Name = "Player 1", player2Name = "Computer") => {
+    setPlayer1Name(player1Name);
+    setPlayer2Name(player2Name);
+    const updatedPlayers = {
+      player: {
+        name: player1Name,
+        symbol: players.player.symbol,
+      },
+      computer: {
+        name: player2Name === null ? "Computer" : player2Name,
+        symbol: players.computer.symbol,
+      },
+    };
+   
+    setPlayers(updatedPlayers);
+    dispatch({ type: "SECOND_STAGE_COMPLETED" });
+  };
+
   return (
     <GameProvider.Provider
       value={{
@@ -159,6 +185,13 @@ export const GameContextProvider = ({ children }) => {
         playingMode,
         board,
         ResetGame,
+        state,
+        FirstStage,
+        SecondStage,
+        player1Name,
+        player2Name,
+        setPlayer1Name,
+        setPlayer2Name,
       }}
     >
       {children}
