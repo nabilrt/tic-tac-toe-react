@@ -6,11 +6,11 @@ const PlayingMode = () => {
 
   return (
     <div className="flex flex-col space-y-6">
-      <p className="font-semibold text-2xl uppercase">
+      <p className="text-2xl font-semibold uppercase">
         Select Your Playing Mode
       </p>
       <select
-        className="px-4 py-4 border font-semibold text-sm  border-[#00d8ff]"
+        className="border border-[#00d8ff] px-4 py-4 text-sm  font-semibold"
         value={playingMode}
         onChange={(e) => setPlayingMode(e.target.value)}
       >
@@ -18,7 +18,11 @@ const PlayingMode = () => {
         <option value="single">Single Player</option>
         <option value="multi">Multi Player</option>
       </select>
-      <Button type="button" onClick={() => FirstStage(playingMode)} variant="secondary">
+      <Button
+        type="button"
+        onClick={() => FirstStage(playingMode)}
+        variant="primary"
+      >
         Select
       </Button>
     </div>

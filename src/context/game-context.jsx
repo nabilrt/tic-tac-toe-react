@@ -170,7 +170,7 @@ export const GameContextProvider = ({ children }) => {
         symbol: players.computer.symbol,
       },
     };
-   
+
     setPlayers(updatedPlayers);
     dispatch({ type: "SECOND_STAGE_COMPLETED" });
   };

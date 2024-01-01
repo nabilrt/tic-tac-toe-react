@@ -7,19 +7,19 @@ const GameBoard = () => {
     <Fragment>
       <div className="flex w-1/4 items-center text-center">
         <div
-          className="box-border border border-solid border-black p-8 basis-1/3 text-xl  h-24 hover:bg-stone-300 "
+          className="box-border h-24 basis-1/3 border border-solid border-[#00d8ff] p-8  text-xl hover:bg-stone-300 "
           onClick={() => handleClick(0, 0)}
         >
           {board[0][0]}
         </div>
         <div
-          className="box-border border border-solid border-black p-8 basis-1/3 text-xl h-24 hover:bg-stone-300"
+          className="box-border h-24 basis-1/3 border border-solid border-[#00d8ff] p-8 text-xl hover:bg-stone-300"
           onClick={() => handleClick(0, 1)}
         >
           {board[0][1]}
         </div>
         <div
-          className="box-border border border-solid border-black p-8 basis-1/3 text-xl h-24 hover:bg-stone-300"
+          className="box-border h-24 basis-1/3 border border-solid border-[#00d8ff] p-8 text-xl hover:bg-stone-300"
           onClick={() => handleClick(0, 2)}
         >
           {board[0][2]}
@@ -27,19 +27,19 @@ const GameBoard = () => {
       </div>
       <div className="flex w-1/4 items-center text-center">
         <div
-          className="box-border border border-solid border-black p-8 basis-1/3 text-xl h-24 hover:bg-stone-300"
+          className="box-border h-24 basis-1/3 border border-solid border-[#00d8ff] p-8 text-xl hover:bg-stone-300"
           onClick={() => handleClick(1, 0)}
         >
           {board[1][0]}
         </div>
         <div
-          className=" box-border border border-solid border-black p-8 basis-1/3 text-xl h-24 hover:bg-stone-300"
+          className=" box-border h-24 basis-1/3 border border-solid border-[#00d8ff] p-8 text-xl hover:bg-stone-300"
           onClick={() => handleClick(1, 1)}
         >
           {board[1][1]}
         </div>
         <div
-          className="box-border border border-solid border-black p-8 basis-1/3 text-xl h-24 hover:bg-stone-300"
+          className="box-border h-24 basis-1/3 border border-solid border-[#00d8ff] p-8 text-xl hover:bg-stone-300"
           onClick={() => handleClick(1, 2)}
         >
           {board[1][2]}
@@ -47,19 +47,19 @@ const GameBoard = () => {
       </div>
       <div className="flex w-1/4 items-center text-center">
         <div
-          className="box-border border border-solid border-black p-8 basis-1/3 text-xl h-24 hover:bg-stone-300"
+          className="box-border h-24 basis-1/3 border border-solid border-[#00d8ff] p-8 text-xl hover:bg-stone-300"
           onClick={() => handleClick(2, 0)}
         >
           {board[2][0]}
         </div>
         <div
-          className="box-border border border-solid border-black p-8 basis-1/3 text-xl h-24 hover:bg-stone-300"
+          className="box-border h-24 basis-1/3 border border-solid border-[#00d8ff] p-8 text-xl hover:bg-stone-300"
           onClick={() => handleClick(2, 1)}
         >
           {board[2][1]}
         </div>
         <div
-          className="box-border border border-solid border-black p-8 basis-1/3 text-xl h-24 hover:bg-stone-300"
+          className="box-border h-24 basis-1/3 border border-solid border-[#00d8ff] p-8 text-xl hover:bg-stone-300"
           onClick={() => handleClick(2, 2)}
         >
           {board[2][2]}

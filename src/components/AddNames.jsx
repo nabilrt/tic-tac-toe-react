@@ -12,10 +12,10 @@ const AddNames = () => {
   } = useTicTacToe();
   return (
     <div className="flex flex-col space-y-3 p-4">
-      <p className="font-semibold text-xl uppercase">Add Player Names</p>
+      <p className="text-xl font-semibold uppercase">Add Player Names</p>
       <input
         type="text"
-        className="p-4 font-semibold"
+        className="border border-solid border-[#00d8ff] p-4 font-semibold"
         placeholder="Enter Player 1 Name"
         value={player1Name}
         onChange={(e) => setPlayer1Name(e.target.value)}
@@ -23,7 +23,7 @@ const AddNames = () => {
       {playingMode === "multi" && (
         <input
           type="text"
-          className="p-4 font-semibold"
+          className="border border-solid border-[#00d8ff] p-4 font-semibold"
           placeholder="Enter Player 1 Name"
           value={player2Name}
           onChange={(e) => setPlayer2Name(e.target.value)}
@@ -31,7 +31,8 @@ const AddNames = () => {
       )}
 
       <Button
-        variant="secondary"
+        variant="primary"
+        disabled={!player1Name}
         onClick={() => {
           const firstPlayerName = player1Name;
           const secondaryPlayerName = player2Name;

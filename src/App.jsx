@@ -13,10 +13,10 @@ function App() {
 
   return (
     <div className="flex  h-screen ">
-      <div className="flex  flex-col justify-center items-center p-4  w-full ">
-        <div className="flex space-x-3 mb-4 ">
+      <div className="flex  w-full flex-col items-center justify-center  p-4 ">
+        <div className="mb-4 flex space-x-3 ">
           <span className=" text-2xl">Welcom to Tic-Tac-Toe by</span>
-          <img src="/react.svg" className="animate-spin inline"></img>
+          <img src="/react.svg" className="inline animate-spin"></img>
         </div>
         {!state.firstStage && <PlayingMode />}
         {state.firstStage && !state.secondStage && <AddNames />}
