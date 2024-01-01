@@ -18,7 +18,7 @@ function App() {
           <span className=" text-2xl">Welcom to Tic-Tac-Toe by</span>
           <img src="/react.svg" className="animate-spin inline"></img>
         </div>
-        {!state.firstStage && <PlayikngMode />}
+        {!state.firstStage && <PlayingMode />}
         {state.firstStage && !state.secondStage && <AddNames />}
         {state.firstStage && state.secondStage && (
           <Fragment>
